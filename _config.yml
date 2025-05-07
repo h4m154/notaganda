@@ -1,0 +1,130 @@
+title: "Notaganda"
+description: "Your central destination for all my video content across platforms"
+url: "https://notaganda.com"
+baseurl: ""
+
+remote_theme: "mmistakes/minimal-mistakes@4.27.1"
+
+# Site settings
+locale: "en-US"
+search: true
+repository: "notaganda/notaganda.github.io"
+teaser: "/assets/images/teaser-default.jpg"
+
+# Build settings
+markdown: kramdown
+timezone: America/New_York
+
+# Outputting
+permalink: /:categories/:title/
+paginate: 6
+paginate_path: /blog/page:num/
+
+# Social media
+social:
+  youtube: "https://youtube.com/yourusername"
+  twitter: "https://twitter.com/yourusername"
+  instagram: "https://instagram.com/yourusername"
+  twitch: "https://twitch.tv/yourusername"
+  tiktok: "https://tiktok.com/@yourusername"
+  patreon: "https://www.patreon.com/yourusername"
+
+# Collections
+collections:
+  videos:
+    output: true
+    permalink: /:collection/:path/
+
+# Defaults
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: false
+      share: true
+      related: true
+  # _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: false
+  # _videos
+  - scope:
+      path: ""
+      type: videos
+    values:
+      layout: single
+      author_profile: false
+      share: true
+
+# Include additional folders
+include:
+  - _pages
+  
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .asset-cache
+  - .bundle
+  - .jekyll-assets-cache
+  - .sass-cache
+
+# Plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-include-cache
+  - jekyll-seo-tag
+
+# Footer customization
+footer:
+  links:
+    - label: "YouTube"
+      icon: "fab fa-fw fa-youtube"
+      url: "https://youtube.com/yourusername"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/yourusername"
+    - label: "Instagram"
+      icon: "fab fa-fw fa-instagram"
+      url: "https://instagram.com/yourusername"
+    - label: "Twitch"
+      icon: "fab fa-fw fa-twitch"
+      url: "https://twitch.tv/yourusername"
+    - label: "TikTok"
+      icon: "fab fa-fw fa-tiktok"
+      url: "https://tiktok.com/@yourusername"
+
+# Analytics
+analytics:
+  provider: "google-gtag"
+  google:
+    tracking_id: "UA-XXXXXXXX-X"
+    anonymize_ip: false
+
+# Site navigation
+header:
+  nav:
+    - title: "Home"
+      url: "/"
+    - title: "Videos"
+      url: "/#videos"
+    - title: "Blog"
+      url: "/blog/"
+    - title: "About"
+      url: "/about/"
+    - title: "Donate"
+      url: "/donate/"
+
+head_custom: head-custom.html 

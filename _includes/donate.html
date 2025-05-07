@@ -1,0 +1,152 @@
+<!-- Donation Section -->
+<section class="page-section support-section">
+  <div class="container">
+    <div class="support-callout">
+      <div class="support-content">
+        <h3>Support My Content</h3>
+        <p>If you enjoy my videos, please consider supporting my work to help me create more high-quality content.</p>
+        <div class="support-buttons">
+          <a href="/donate/" class="btn btn-hero">Support Options</a>
+          <a href="https://www.patreon.com/yourusername" class="btn btn-secondary" target="_blank">Join Patreon</a>
+        </div>
+      </div>
+      <div class="support-graphic">
+        <div class="support-animation"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .support-section {
+    padding: 3rem 0 6rem;
+  }
+  
+  .support-callout {
+    background-color: var(--color-bg-secondary);
+    border-radius: 16px;
+    padding: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .support-callout::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-primary);
+  }
+  
+  .support-content {
+    flex: 2 1 400px;
+    padding-right: 2rem;
+  }
+  
+  .support-graphic {
+    flex: 1 1 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .support-animation {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: var(--gradient-secondary);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: pulse 3s infinite;
+  }
+  
+  .support-animation::before {
+    content: '♥';
+    font-size: 60px;
+    color: rgba(255, 255, 255, 0.9);
+  }
+  
+  .support-animation::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid var(--color-accent-tertiary);
+    animation: ripple 3s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba(67, 97, 238, 0.7);
+    }
+    70% {
+      transform: scale(1.05);
+      box-shadow: 0 0 0 10px rgba(67, 97, 238, 0);
+    }
+    100% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba(67, 97, 238, 0);
+    }
+  }
+  
+  @keyframes ripple {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1.5);
+      opacity: 0;
+    }
+  }
+  
+  .support-callout h3 {
+    margin-top: 0;
+    color: var(--color-text-primary);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .support-callout p {
+    color: var(--color-text-secondary);
+    margin-bottom: 1.8rem;
+    font-size: 1.1rem;
+    line-height: 1.7;
+  }
+  
+  .support-buttons {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  @media (max-width: 768px) {
+    .support-callout {
+      padding: 2rem;
+    }
+    
+    .support-content {
+      flex: 1 1 100%;
+      padding-right: 0;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    
+    .support-graphic {
+      flex: 1 1 100%;
+    }
+    
+    .support-buttons {
+      justify-content: center;
+    }
+  }
+</style> 
