@@ -27,7 +27,7 @@ The site uses a custom domain from IONOS. The DNS settings are configured as fol
    - 185.199.110.153
    - 185.199.111.153
 
-2. CNAME record for www subdomain pointing to `notaganda.github.io`
+2. CNAME record for www subdomain pointing to `h4m154.github.io`
 
 ## Content Management
 
