@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "About NotAGanda"
+title: "About Notaganda"
 permalink: /about/
 author_profile: false
 toc: true
@@ -17,8 +17,8 @@ toc_sticky: true
     </div>
     
     <div class="about-intro">
-      <h1>Welcome to NotAGanda</h1>
-      <p class="subtitle">Your central hub for content across multiple platforms</p>
+      <h1>Welcome to Notaganda</h1>
+      <p class="subtitle">Your central hub for my content across multiple platforms</p>
     </div>
   </div>
 
@@ -26,7 +26,8 @@ toc_sticky: true
     <div class="about-section">
       <h2>My Story</h2>
       <p>I created this hub as a central location to gather all my video content from across multiple platforms. Whether you're a longtime subscriber or just discovering my content, this site makes it easy to find all my videos in one place.</p>
-      <p>My journey started in [year], and since then, I've been creating content that aims to [your content mission]. Through my videos, I strive to [what you aim to achieve with your content].</p>
+      <p>My journey in content creation began with a passion for sharing my experiences and knowledge with others. What started as a hobby has grown into something much more meaningful as I've connected with an amazing community of viewers and fellow creators.</p>
+      <p>Through my content, I aim to entertain, inform, and inspire. Every video is created with the goal of providing value while staying true to my authentic voice and perspective.</p>
     </div>
 
     <div class="about-section platforms-section">
@@ -35,28 +36,28 @@ toc_sticky: true
         <div class="platform-card">
           <i class="fab fa-youtube"></i>
           <h3>YouTube</h3>
-          <p>Long-form videos and detailed discussions on a variety of topics.</p>
+          <p>Long-form videos including tutorials, reviews, and commentary on topics I'm passionate about.</p>
           <a href="https://youtube.com/yourusername" target="_blank" class="platform-link">Visit Channel</a>
         </div>
         
         <div class="platform-card">
           <i class="fab fa-twitch"></i>
           <h3>Twitch</h3>
-          <p>Live streams and interactive sessions where we can connect in real-time.</p>
+          <p>Live streams where we can interact in real-time, including Q&As, creative sessions, and gameplay.</p>
           <a href="https://twitch.tv/yourusername" target="_blank" class="platform-link">Watch Streams</a>
         </div>
         
         <div class="platform-card">
           <i class="fab fa-tiktok"></i>
           <h3>TikTok</h3>
-          <p>Short-form videos and quick updates for bite-sized content.</p>
+          <p>Short-form videos featuring quick tips, highlights, and behind-the-scenes glimpses of my creative process.</p>
           <a href="https://tiktok.com/@yourusername" target="_blank" class="platform-link">View TikToks</a>
         </div>
         
         <div class="platform-card">
           <i class="fab fa-twitter"></i>
           <h3>Twitter</h3>
-          <p>News, updates, and conversations about the latest developments.</p>
+          <p>Updates on new content, conversations about current topics, and direct interaction with my audience.</p>
           <a href="https://twitter.com/yourusername" target="_blank" class="platform-link">Follow Me</a>
         </div>
       </div>
