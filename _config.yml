@@ -8,7 +8,7 @@ remote_theme: "mmistakes/minimal-mistakes@4.27.1"
 # Site settings
 locale: "en-US"
 search: true
-repository: "h4m154/h4m154.github.io"
+repository: "h4m154/notaganda"
 teaser: "/assets/images/teaser-default.jpg"
 
 # Build settings
