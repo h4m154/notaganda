@@ -12,6 +12,63 @@
 <!-- Scroll to Section Script -->
 <script>
   document.addEventListener('DOMContentLoaded', function() {
+    // Site title dropdown functionality
+    const setupSiteTitleDropdown = function() {
+      const siteTitle = document.querySelector('.site-title');
+      if (!siteTitle) return;
+      
+      // Wrap site title in a container
+      const siteTitleContainer = document.createElement('div');
+      siteTitleContainer.classList.add('site-title-container');
+      siteTitle.parentNode.insertBefore(siteTitleContainer, siteTitle);
+      siteTitleContainer.appendChild(siteTitle);
+      
+      // Add dropdown indicator
+      siteTitle.innerHTML += ' <i class="fas fa-chevron-down" style="font-size: 0.7em; margin-left: 5px; opacity: 0.7;"></i>';
+      
+      // Create dropdown menu
+      const dropdown = document.createElement('div');
+      dropdown.classList.add('site-title-dropdown');
+      
+      // Add navigation items
+      dropdown.innerHTML = `
+        <a href="/" class="title-dropdown-item"><i class="fas fa-home"></i>Home</a>
+        <a href="/#videos" class="title-dropdown-item"><i class="fas fa-video"></i>Videos</a>
+        <a href="/blog/" class="title-dropdown-item"><i class="fas fa-pen-fancy"></i>Blog</a>
+        <a href="/about/" class="title-dropdown-item"><i class="fas fa-user"></i>About</a>
+        <a href="/services/" class="title-dropdown-item"><i class="fas fa-briefcase"></i>Services</a>
+        <a href="/projects/" class="title-dropdown-item"><i class="fas fa-project-diagram"></i>Projects</a>
+        <a href="/contact/" class="title-dropdown-item"><i class="fas fa-envelope"></i>Contact</a>
+        <a href="/donate/" class="title-dropdown-item highlight"><i class="fas fa-heart"></i>Support My Work</a>
+      `;
+      
+      siteTitleContainer.appendChild(dropdown);
+      
+      // Toggle dropdown visibility
+      let isOpen = false;
+      
+      siteTitle.addEventListener('click', function(e) {
+        e.preventDefault();
+        isOpen = !isOpen;
+        if (isOpen) {
+          dropdown.classList.add('visible');
+        } else {
+          dropdown.classList.remove('visible');
+        }
+      });
+      
+      // Close dropdown when clicking outside
+      document.addEventListener('click', function(e) {
+        if (!siteTitleContainer.contains(e.target) && isOpen) {
+          isOpen = false;
+          dropdown.classList.remove('visible');
+        }
+      });
+    };
+    
+    // Run site title dropdown setup
+    setupSiteTitleDropdown();
+    
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {

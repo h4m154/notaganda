@@ -39,9 +39,9 @@ permalink: /
   </section>
 
   <section class="support-preview">
-    <h2>Support</h2>
+    <h2><i class="fas fa-heart" style="color: var(--color-accent-primary); margin-right: 7px;"></i>Support</h2>
     <p>If you enjoy my content, consider supporting my work through various platforms and donations.</p>
-    <a class="btn" href="/donate/">Support Me</a>
+    <a class="btn btn-hero" href="/donate/">Support Me</a>
   </section>
 </div>
 
