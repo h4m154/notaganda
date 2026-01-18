@@ -1,0 +1,57 @@
+# Site settings
+title: "Notaganda"
+description: "Master strategy gaming with expert-crafted courses. From beginner fundamentals to advanced tactics."
+baseurl: ""
+url: "https://notaganda.com"
+
+# Build settings
+markdown: kramdown
+theme: null
+plugins:
+  - jekyll-seo-tag
+
+# Collections
+collections:
+  courses:
+    output: true
+    permalink: /courses/:slug/
+  lessons:
+    output: true
+    permalink: /courses/:path/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "courses"
+    values:
+      layout: "course"
+  - scope:
+      path: ""
+      type: "lessons"
+    values:
+      layout: "lesson"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+# Navigation
+header:
+  nav:
+    - title: "Home"
+      url: "/"
+    - title: "Courses"
+      url: "/courses/"
+    - title: "About"
+      url: "/about/"
+    - title: "Contact"
+      url: "/contact/"
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .claude

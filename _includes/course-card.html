@@ -1,0 +1,24 @@
+<article class="course-card">
+  <div class="course-card-image">
+    {% if include.course.image %}
+    <img src="{{ include.course.image | relative_url }}" alt="{{ include.course.title }}">
+    {% else %}
+    <div class="course-card-placeholder">
+      <svg width="64" height="64" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zm0 11.17L4.18 9 12 4.83 19.82 9 12 14.17zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/>
+      </svg>
+    </div>
+    {% endif %}
+  </div>
+  <div class="course-card-content">
+    <span class="course-card-tag">{{ include.course.category | default: "Strategy" }}</span>
+    <h3 class="course-card-title">{{ include.course.title }}</h3>
+    <p class="course-card-description">{{ include.course.excerpt | default: include.course.description | truncate: 120 }}</p>
+    <div class="course-card-meta">
+      {% assign lesson_count = site.lessons | where: "course", include.course.slug | size %}
+      <span class="lesson-count">{{ lesson_count }} Lessons</span>
+      <span class="difficulty">{{ include.course.difficulty | default: "All Levels" }}</span>
+    </div>
+    <a href="{{ include.course.url | relative_url }}" class="btn btn-secondary">View Course</a>
+  </div>
+</article>

@@ -1,0 +1,68 @@
+---
+layout: base
+---
+{% assign course_lessons = site.lessons | where: "course", page.course | sort: "order" %}
+{% assign current_index = nil %}
+{% for lesson in course_lessons %}
+  {% if lesson.url == page.url %}
+    {% assign current_index = forloop.index0 %}
+  {% endif %}
+{% endfor %}
+
+{% if current_index != nil %}
+  {% assign prev_index = current_index | minus: 1 %}
+  {% assign next_index = current_index | plus: 1 %}
+  {% if prev_index >= 0 %}
+    {% assign prev_lesson = course_lessons[prev_index] %}
+  {% endif %}
+  {% if next_index < course_lessons.size %}
+    {% assign next_lesson = course_lessons[next_index] %}
+  {% endif %}
+{% endif %}
+
+{% assign course = site.courses | where: "slug", page.course | first %}
+
+<div class="lesson-page">
+  <div class="container">
+    <div class="lesson-layout">
+      <aside class="lesson-sidebar">
+        <a href="{{ course.url | relative_url }}" class="back-to-course">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M11 2L5 8l6 6" stroke="currentColor" stroke-width="2" fill="none"/>
+          </svg>
+          Back to Course
+        </a>
+
+        <div class="course-outline">
+          <h3>{{ course.title }}</h3>
+          <ol class="lesson-list">
+            {% for lesson in course_lessons %}
+            <li class="{% if lesson.url == page.url %}active{% endif %}">
+              <a href="{{ lesson.url | relative_url }}">
+                <span class="lesson-number">{{ lesson.order }}</span>
+                <span class="lesson-title">{{ lesson.title }}</span>
+              </a>
+            </li>
+            {% endfor %}
+          </ol>
+        </div>
+      </aside>
+
+      <main class="lesson-content">
+        <header class="lesson-header">
+          <span class="lesson-number-badge">Lesson {{ page.order }}</span>
+          <h1>{{ page.title }}</h1>
+          {% if page.description %}
+          <p class="lesson-description">{{ page.description }}</p>
+          {% endif %}
+        </header>
+
+        <article class="lesson-body">
+          {{ content }}
+        </article>
+
+        {% include lesson-nav.html prev=prev_lesson next=next_lesson course=course %}
+      </main>
+    </div>
+  </div>
+</div>

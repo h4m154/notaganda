@@ -1,0 +1,39 @@
+<nav class="lesson-nav">
+  <div class="lesson-nav-inner">
+    {% if include.prev %}
+    <a href="{{ include.prev.url | relative_url }}" class="lesson-nav-link prev">
+      <span class="lesson-nav-direction">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+          <path d="M11 2L5 8l6 6" stroke="currentColor" stroke-width="2" fill="none"/>
+        </svg>
+        Previous Lesson
+      </span>
+      <span class="lesson-nav-title">{{ include.prev.title }}</span>
+    </a>
+    {% else %}
+    <div class="lesson-nav-link prev disabled"></div>
+    {% endif %}
+
+    {% if include.next %}
+    <a href="{{ include.next.url | relative_url }}" class="lesson-nav-link next">
+      <span class="lesson-nav-direction">
+        Next Lesson
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+          <path d="M5 2l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none"/>
+        </svg>
+      </span>
+      <span class="lesson-nav-title">{{ include.next.title }}</span>
+    </a>
+    {% else %}
+    <a href="{{ include.course.url | relative_url }}" class="lesson-nav-link next complete">
+      <span class="lesson-nav-direction">
+        Course Complete!
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+          <path d="M13.5 2L6 9.5 2.5 6 1 7.5l5 5 9-9z"/>
+        </svg>
+      </span>
+      <span class="lesson-nav-title">Back to {{ include.course.title }}</span>
+    </a>
+    {% endif %}
+  </div>
+</nav>

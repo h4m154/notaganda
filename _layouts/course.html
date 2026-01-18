@@ -1,0 +1,52 @@
+---
+layout: base
+---
+<div class="course-page">
+  <div class="course-hero">
+    <div class="container">
+      <div class="course-hero-content">
+        <span class="course-tag">{{ page.category | default: "Strategy" }}</span>
+        <h1>{{ page.title }}</h1>
+        <p class="course-description">{{ page.description }}</p>
+        <div class="course-meta">
+          <span class="lesson-count">{{ page.lessons | size }} Lessons</span>
+          <span class="difficulty">{{ page.difficulty | default: "All Levels" }}</span>
+        </div>
+        {% if page.lessons.size > 0 %}
+        {% assign first_lesson = site.lessons | where: "course", page.slug | sort: "order" | first %}
+        {% if first_lesson %}
+        <a href="{{ first_lesson.url | relative_url }}" class="btn btn-primary">Start Learning</a>
+        {% endif %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="course-content">
+      <div class="course-main">
+        {{ content }}
+      </div>
+
+      <aside class="course-sidebar">
+        <div class="course-outline">
+          <h3>Course Outline</h3>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 0%"></div>
+          </div>
+          <ol class="lesson-list">
+            {% assign course_lessons = site.lessons | where: "course", page.slug | sort: "order" %}
+            {% for lesson in course_lessons %}
+            <li>
+              <a href="{{ lesson.url | relative_url }}">
+                <span class="lesson-number">{{ lesson.order }}</span>
+                <span class="lesson-title">{{ lesson.title }}</span>
+              </a>
+            </li>
+            {% endfor %}
+          </ol>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
